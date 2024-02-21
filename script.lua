@@ -22,7 +22,7 @@ text_loader = "🎮 Script Đổi Tên Màu, Tên Dài Liên Quân Mobile\n⚠�
 
 if #gg.getRangesList('libil2cpp.so') >0 then 
 else 
-toast("🎮 Đã Tải Được Data Game 🎮")
+toast("Error")
 gg.setVisible(true)
 print("Không tìm thấy\nGlobal-metadata.dat | Libil2cpp.so !\nHãy vào game rồi thử lại","") 
 return false end
