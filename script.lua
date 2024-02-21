@@ -1,3 +1,5 @@
+local toast = gg.toast
+local alert = gg.alert
 gg.setVisible(false)
 UnlockFps1 = 0xFDD684
 UnlockFps2 = 0xFCF2E0
@@ -6,22 +8,21 @@ UnlockFps4 = 0xFDEB10
 if #gg.getRangesList('libil2cpp.so') >0 then 
 unity = gg.getRangesList('libunity.so')[1].start 
 il2cpp = gg.getRangesList('libil2cpp.so')[1].start 
-else gg.alert("Not found\nGlobal-metadata.dat | Libil2cpp.so | Libunity.so !\n-->Hãy vào game rồi thử lại\n-->เริ่ม Rov แล้วลองอีกครั้ง","") return false end
-function TamPx(address,flags,value) 
+else alert("Not found\nGlobal-metadata.dat | Libil2cpp.so | Libunity.so !\n-->Hãy vào game rồi thử lại\n-->เริ่ม Rov แล้วลองอีกครั้ง","") return false end
+function FixCrash(address,flags,value) 
 local tt={} tt[1]={} tt[1].address=address tt[1].flags=flags tt[1].value=value 
 gg.setValues(tt)
 end
-TamPx(il2cpp + 0x1B01B60, 32, "h 00 F0 20 E3 1E FF 2F E1") 
-TamPx(il2cpp + 0x1B01C94, 32, "h 00 F0 20 E3 1E FF 2F E1") 
-TamPx(il2cpp + 0x127739C, 32, "h 00 F0 20 E3 1EFF 2F E1") 
-gg.toast("BYPASS FIX CRASH VIRTUAL DONE !")
-gg.alert("\nFix Crash")
-gg.toast("Script By Tam PX Zalo Me: 0826909968")
-TamPedz = "Scipt By TamPx || Youtube Tam Px\nNhập <≠60 Kí Tựa:"
+FixCrash(il2cpp + 0x1B01B60, 32, "h 00 F0 20 E3 1E FF 2F E1") 
+FixCrash(il2cpp + 0x1B01C94, 32, "h 00 F0 20 E3 1E FF 2F E1") 
+FixCrash(il2cpp + 0x127739C, 32, "h 00 F0 20 E3 1EFF 2F E1") 
+toast("BYPASS FIX CRASH VIRTUAL DONE !")
+
+text_loader = "🎮 Script Đổi Tên Màu, Tên Dài Liên Quân Mobile\n⚠️ Nhập Dưới 60 Kí Tự:"
 
 if #gg.getRangesList('libil2cpp.so') >0 then 
 else 
-
+toast("🎮 Đã Tải Được Data Game 🎮")
 gg.setVisible(true)
 print("Không tìm thấy\nGlobal-metadata.dat | Libil2cpp.so !\nHãy vào game rồi thử lại","") 
 return false end
@@ -54,30 +55,30 @@ end
 gg.addListItems(t)
 t = nil
 gg.clearResults()
-gg.alert("Quá Trình Đã Kết Thúc\nKhông Được Nhấn Vào Nút Ok Trên Keyboard\nHãy Nhấn Vào Khu Vực Trống Để Tiếp Tục\nHãy Xoá Game Đi Tại Lại Nếu Như Thất Bại")
+alert("Quá Trình Đã Kết Thúc\nKhông Được Nhấn Vào Nút Ok Trên Bàn Phím\nHãy Nhấn Vào Khu Vực Trống Để Tiếp Tục\nHãy Xoá Game Đi Tại Lại Nếu Như Thất Bại")
 os.exit()
 end
 function Pte()
-gg.alert("Nhập Lần "..SoLan..":\nHãy Nhập 1 Dấu Cách Vào Phần Cuối Tên")
-gg.toast("Sẽ Bắt Đầu Sau 5s")
+alert("Nhập Lần "..SoLan..":\nHãy Nhập 1 Dấu Cách Vào Phần Cuối Tên")
+toast("Sẽ Bắt Đầu Sau 5s")
 gg.sleep(1000)
 gg.setVisible(false)
-gg.toast("5s")
+toast("5s")
 gg.sleep(1000)
 gg.setVisible(false)
-gg.toast("4s")
+toast("4s")
 gg.sleep(1000)
 gg.setVisible(false)
-gg.toast("3s")
+toast("3s")
 gg.sleep(1000)
 gg.setVisible(false)
-gg.toast("2s")
+toast("2s")
 gg.sleep(1000)
 gg.setVisible(false)
-gg.toast("1s")											end
+toast("1s")											end
 function Checker()
 if gg.getResultCount() <= 0 then
-gg.alert("Oh Không Tìm Thấy Giá Trị")
+alert("Oh Không Tìm Thấy Giá Trị")
 os.exit()
 elseif gg.getResultCount() <= 8 then 
 Done()
@@ -94,7 +95,7 @@ Pr[3] = Pr[2] + 1
 Pr[4] = Pr[3] + 1
 Pr[5] = Pr[4] + 1
 Pr[6] = Pr[5] + 1
-if Pt[1] == "60" then gg.alert("Số Kí Tự Đã Quá Giới Hạn 60") Loader() end
+if Pt[1] == "60" then alert("Số Kí Tự Đã Quá Giới Hạn 60") Loader() end
 gg.clearResults()
 gg.setRanges(gg.REGION_ANONYMOUS)
 gg.searchNumber(Pt[1], gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
@@ -126,11 +127,11 @@ Checker()
 end
 function Loader()
 Pt = gg.prompt({
-TamPedz},nil,{"number"})
-if Pt == nil then gg.toast("Chế độ chờ đã được bật")else
+text_loader},nil,{"number"})
+if Pt == nil then toast("Chế độ chờ đã được bật")else
 if not Pt then return end
-if Pt[1] >= "60" then gg.alert("Số Kí Tự Đã Vượt Quá 60") return end
-if Pt[1] <="12" then gg.alert("Kí Tự Quá Ít Điều Này Không Cần Thiết Dùng Tới Tool Này") return end
+if Pt[1] >= "60" then alert("Số Kí Tự Đã Vượt Quá 60") return end
+if Pt[1] <="12" then alert("Kí Tự Quá Ít Điều Này Không Cần Thiết Dùng Tới Tool Này") return end
 if Pt[1] <="60" then
 loaderx() end
 end
