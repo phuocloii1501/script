@@ -1,10 +1,6 @@
 local toast = gg.toast
 local alert = gg.alert
 gg.setVisible(false)
-UnlockFps1 = 0xFDD684
-UnlockFps2 = 0xFCF2E0
-UnlockFps3 = 0xFCF1EC
-UnlockFps4 = 0xFDEB10
 if #gg.getRangesList('libil2cpp.so') >0 then 
 unity = gg.getRangesList('libunity.so')[1].start 
 il2cpp = gg.getRangesList('libil2cpp.so')[1].start 
